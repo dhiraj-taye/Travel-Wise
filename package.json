@@ -2,15 +2,15 @@
   "name": "new-folder",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "backend/index.js",
   "scripts": {
-  "dev": "nodemon server/index.js",
-  "start": "node server/index.js",
-  "build": "npm run install-all && npm run build-client",
-  "install-all": "npm install && npm install --prefix client",
-  "build-client": "npm run build --prefix client"
-}
-,
+    "dev": "nodemon server/index.js",
+    "start": "node server/index.js",
+    "build": "npm run install-all && npm run build-client",
+    "install-all": "npm install && npm install --prefix client",
+    "build-client": "npm run build --prefix client",
+    "prestart": "chmod +x node_modules/.bin/nodemon"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
