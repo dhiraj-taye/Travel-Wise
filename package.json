@@ -4,13 +4,16 @@
   "description": "",
   "main": "backend/index.js",
   "scripts": {
-    "dev": "nodemon server/index.js",
-    "start": "node server/index.js",
-    "build": "npm run install-all && npm run build-client",
-    "install-all": "npm install && npm install --prefix client",
-    "build-client": "npm run build --prefix client",
-    "prestart": "chmod +x node_modules/.bin/nodemon"
-  },
+  "prebuild": "chmod +x client/node_modules/.bin/vite",
+  "dev": "concurrently \"npm run server\" \"npm run client\"",
+  "server": "nodemon backend/index.js",
+  "client": "npm start --prefix client",
+  "start": "node backend/index.js",
+  "build": "npm run install-all && npm run build-client",
+  "install-all": "npm install && npm install --prefix client",
+  "build-client": "npm run build --prefix client"
+}
+,
   "keywords": [],
   "author": "",
   "license": "ISC",
