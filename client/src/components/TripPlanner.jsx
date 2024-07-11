@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import axios from 'axios';
 
 const TripPlanner = () => {
@@ -12,7 +12,7 @@ const TripPlanner = () => {
   const handlePlanTrip = async () => {
     try {
       setLoading(true);
-      const response = await axios.post(`http://localhost:5000/api/trip/plan`, {
+      const response = await axios.post(`/api/trip/plan`, {
         country,
         city,
         days,
